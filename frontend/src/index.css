@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #eba768;
+  --primary-hover: #d99252;
+  --secondary-color: #17a2b8;
+  --secondary-hover: #138496;
+  --dark-color: #2b3a42;
+  --light-bg: #fdfaf6;
+  --card-bg: #ffffff;
+  --text-dark: #374151;
+  --text-muted: #6b7280;
+  --border-color: #f3f4f6;
+  --font-title: 'Baloo 2', cursive;
+  --font-body: 'Inter', sans-serif;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-nav: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  color: var(--dark-color);
+  font-weight: 700;
+}
+
+/* Custom Overrides & UI Improvements */
+.navbar {
+  font-family: var(--font-title);
+  background-color: var(--card-bg) !important;
+  box-shadow: var(--shadow-nav);
+  padding: 0.8rem 2rem;
+  border-bottom: 2px solid rgba(235, 167, 104, 0.2);
+}
+
+.navbar-brand img {
+  height: 48px;
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-color) !important;
+  margin: 0 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Premium Buttons */
+.btn-primary-cafofo {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  font-family: var(--font-title);
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-cafofo:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(235, 167, 104, 0.3);
+  color: #fff;
+}
+
+.btn-secondary-cafofo {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+  font-family: var(--font-title);
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-cafofo:hover {
+  background-color: var(--secondary-hover);
+  border-color: var(--secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+  color: #fff;
+}
+
+/* Carousel */
+.carousel-inner {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  max-width: 95%;
+  margin: 20px auto;
+}
+
+.carousel-item img {
+  border-radius: 16px;
+  height: 610px !important;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .carousel-item img {
+    height: 400px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 250px !important;
+  }
+}
+
+/* Cards & Layout */
+.card-group-custom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.card-custom {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  max-width: 350px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-custom img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-custom-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-custom-title {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+}
+
+.card-custom-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  flex-grow: 1;
+}
+
+.card-custom-footer {
+  padding: 1rem 1.5rem;
+  background-color: var(--light-bg);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Forms */
+.form-container-custom {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem;
+  max-width: 650px;
+  margin: 3rem auto;
+  border: 1px solid var(--border-color);
+}
+
+.form-container-custom h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-group-custom {
+  margin-bottom: 1.25rem;
+}
+
+.form-group-custom label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.form-control-custom {
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 0.625rem 0.875rem;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control-custom:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(235, 167, 104, 0.25);
+  outline: none;
+}
+
+/* Admin Dashboard layout */
+.admin-container {
+  display: flex;
+  min-height: calc(100vh - 120px);
+}
+
+.admin-sidebar {
+  width: 250px;
+  background-color: var(--dark-color);
+  color: #fff;
+  padding: 2rem 1rem;
+}
+
+.admin-sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #d1d5db;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-title);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.admin-sidebar-link:hover, .admin-sidebar-link.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.admin-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f9fafb;
+}
+
+/* Tables */
+.table-custom {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.table-custom th {
+  background-color: var(--dark-color);
+  color: #fff;
+  font-family: var(--font-title);
+  font-weight: 600;
+  border: none;
+  padding: 1rem;
+}
+
+.table-custom td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Video Section */
+.video-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 992px) {
+  .video-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .video-section iframe {
+    width: 100% !important;
+  }
+}
+
+.video-list {
+  text-align: left;
+  flex: 1;
+}
+
+.video-list ol {
+  padding-left: 1.25rem;
+}
+
+.video-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-color);
+  color: #d1d5db;
+  padding: 2rem 0;
+  text-align: center;
+  font-family: var(--font-title);
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Custom Badges with High Contrast */
+.badge-pet-cachorro {
+  background-color: #92400e !important; /* Amber-800 */
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+}
+
+.badge-pet-gato {
+  background-color: #0369a1 !important; /* Sky-700 */
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+}
+
+.badge-pet-outro {
+  background-color: #374151 !important; /* Gray-700 */
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+}
+
+.badge-status-disponivel {
+  background-color: #15803d !important; /* Green-700 */
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+}
+
+.badge-status-adotado {
+  background-color: #1d4ed8 !important; /* Blue-700 */
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+}
+
+.badge-status-analise {
+  background-color: #b91c1c !important; /* Red-700 */
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+}
+
+.badge-voluntary-period {
+  background-color: #92400e !important; /* Amber-800 */
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+}
+
+/* Remove default blue focus outline/shadow on pagination buttons and standard buttons */
+.page-link:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.btn:focus, .btn-close:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
