@@ -1,8 +1,14 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import { auth } from '../firebase';
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
+import { auth, googleProvider } from '../firebase';
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 
 const AuthContext = createContext();
+
+// Lista de e-mails autorizados para acesso administrativo via Google Sign-In
+const ALLOWED_ADMIN_EMAILS = [
+  'admin@cafofo.com',
+  // Adicione aqui outros e-mails de administradores ou professores para fins de teste
+];
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -10,13 +16,23 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     // Monitora as mudanças de estado de autenticação do Firebase
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
-        setUser({
-          email: currentUser.email,
-          uid: currentUser.uid,
-          role: 'admin'
-        });
+        const email = currentUser.email || '';
+        // Admite qualquer e-mail @cafofo.com ou os contidos na lista de e-mails permitidos
+        const isAllowed = email.endsWith('@cafofo.com') || ALLOWED_ADMIN_EMAILS.includes(email);
+
+        if (isAllowed) {
+          setUser({
+            email: currentUser.email,
+            uid: currentUser.uid,
+            role: 'admin'
+          });
+        } else {
+          // Desloga imediatamente e nega acesso
+          await signOut(auth);
+          setUser(null);
+        }
       } else {
         setUser(null);
       }
@@ -54,6 +70,27 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const loginWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const email = result.user.email || '';
+      const isAllowed = email.endsWith('@cafofo.com') || ALLOWED_ADMIN_EMAILS.includes(email);
+
+      if (isAllowed) {
+        return { success: true };
+      } else {
+        await signOut(auth);
+        return { success: false, message: 'Esta conta do Google não tem permissões administrativas.' };
+      }
+    } catch (error) {
+      console.error("Erro no login do Google: ", error);
+      if (error.code === 'auth/popup-closed-by-user') {
+        return { success: false, message: 'O login com o Google foi cancelado pelo usuário.' };
+      }
+      return { success: false, message: 'Falha na autenticação do Google. Tente novamente.' };
+    }
+  };
+
   const logout = async () => {
     try {
       await signOut(auth);
@@ -63,7 +100,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
+    <AuthContext.Provider value={{ user, login, loginWithGoogle, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

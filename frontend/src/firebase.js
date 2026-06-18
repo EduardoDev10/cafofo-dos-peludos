@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBcSHZ9B5iD4iHBP7sv0dPqZtCfsMV_kuk",
@@ -15,3 +15,6 @@ const app = initializeApp(firebaseConfig);
 
 // Inicializa a Autenticação do Firebase (Login do Administrador)
 export const auth = getAuth(app);
+
+// Configura o Provedor do Google
+export const googleProvider = new GoogleAuthProvider();
