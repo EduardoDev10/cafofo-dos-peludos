@@ -84,5 +84,23 @@ npm run dev
 ## 🔑 Credenciais de Acesso Administrativo
 Para acessar a área restrita de administração (`/login`) no sistema, utilize os seguintes dados de teste:
 
-* **E-mail:** `admin@cafofo.com`
-* **Senha:** `admin123`
+*   **E-mail:** `admin@cafofo.com`
+*   **Senha:** `admin123`
+
+### 🔐 Acesso via Google Sign-In (Novo)
+O sistema agora suporta login com contas do Google. Por motivos de segurança, o acesso é controlado:
+1.  **Domínio Corporativo:** Qualquer e-mail terminado em `@cafofo.com` tem acesso liberado automaticamente.
+2.  **Lista de Administradores Autorizados:** E-mails pessoais (como `@gmail.com` ou outros domínios) precisam ser previamente incluídos no código.
+    *   **Como configurar seu e-mail para testes:**
+        1. Abra o arquivo [AuthContext.jsx](file:///e:/LayoutSugeridoProjetoAT2N2/CafofoDosPeludos1/frontend/src/context/AuthContext.jsx).
+        2. Localize o array `ALLOWED_ADMIN_EMAILS` (próximo à linha 8).
+        3. Adicione o seu e-mail do Google (ex: `'seu-email-pessoal@gmail.com'`) na lista:
+           ```javascript
+           const ALLOWED_ADMIN_EMAILS = [
+             'admin@cafofo.com',
+             'seu-email-pessoal@gmail.com' // Adicionado para teste
+           ];
+           ```
+        4. Salve o arquivo. Agora, ao clicar em **"Entrar com o Google"** e escolher essa conta, seu acesso será concedido.
+    *   **Bloqueio de Contas Não Autorizadas:** Se um e-mail do Google que não estiver na lista tentar fazer o login, o sistema exibirá uma mensagem de erro na tela de login informando que a conta não tem permissões administrativas e o acesso ao painel será negado.
+
