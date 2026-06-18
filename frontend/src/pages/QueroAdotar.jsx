@@ -60,14 +60,12 @@ const QueroAdotar = () => {
         {/* Busca e Filtros */}
         <div className="d-flex flex-column flex-sm-row w-100 w-md-auto gap-2" style={{ maxWidth: '600px', gap: '10px' }}>
           <div className="input-group" style={{ minWidth: '220px' }}>
-            <div className="input-group-prepend">
-              <span className="input-group-text bg-white border-right-0" style={{ borderTopLeftRadius: '20px', borderBottomLeftRadius: '20px' }}>
-                <Search size={16} className="text-muted" />
-              </span>
-            </div>
+            <span className="input-group-text bg-white border-end-0" style={{ borderTopLeftRadius: '20px', borderBottomLeftRadius: '20px' }}>
+              <Search size={16} className="text-muted" />
+            </span>
             <input
               type="text"
-              className="form-control border-left-0"
+              className="form-control border-start-0"
               style={{ borderTopRightRadius: '20px', borderBottomRightRadius: '20px' }}
               placeholder="Buscar pet..."
               value={search}

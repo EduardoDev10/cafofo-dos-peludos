@@ -114,7 +114,7 @@ const SejaVoluntario = () => {
               bem-estar, criando um vínculo de amor e confiança.
             </p>
             <div className="bg-light p-3 rounded border border-warning mt-4 d-flex align-items-center">
-              <Smile size={36} className="text-warning mr-3" />
+              <Smile size={36} className="text-warning me-3" />
               <div>
                 <h5 className="mb-1 text-warning" style={{ fontFamily: 'var(--font-title)' }}>Seja a diferença!</h5>
                 <p className="small mb-0 text-secondary">Preencha o formulário ao lado e junte-se ao nosso time de voluntários.</p>
@@ -239,7 +239,7 @@ const SejaVoluntario = () => {
                         onClick={() => !loading && setTempoDisponivel(time)}
                       >
                         <input
-                          className="form-check-input position-static m-0 mr-2"
+                          className="form-check-input position-static m-0 me-2"
                           type="radio"
                           name="timeRadio"
                           id={`radio-${time}`}

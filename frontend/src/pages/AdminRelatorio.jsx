@@ -158,14 +158,12 @@ const AdminRelatorio = () => {
                 <div className="col-md-6 form-group mb-md-0">
                   <label className="font-weight-bold text-secondary">Pesquisa textual (Adotante, Pet, Motivação)</label>
                   <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text bg-light border-right-0" style={{ borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' }}>
-                        <Search size={16} className="text-muted" />
-                      </span>
-                    </div>
+                    <span className="input-group-text bg-light border-end-0" style={{ borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' }}>
+                      <Search size={16} className="text-muted" />
+                    </span>
                     <input
                       type="text"
-                      className="form-control border-left-0"
+                      className="form-control border-start-0"
                       style={{ borderTopRightRadius: '8px', borderBottomRightRadius: '8px' }}
                       placeholder="Pesquisar..."
                       value={search}

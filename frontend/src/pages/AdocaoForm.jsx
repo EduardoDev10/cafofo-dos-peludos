@@ -342,7 +342,7 @@ const AdocaoForm = () => {
 
       <div className="d-flex justify-content-between mt-4">
         <button type="button" className="btn btn-secondary d-flex align-items-center" style={{ borderRadius: '20px' }} onClick={handlePrevStep}>
-          <ArrowLeft size={16} className="mr-2" /> Voltar
+          <ArrowLeft size={16} className="me-2" /> Voltar
         </button>
         <button type="button" className="btn btn-warning text-white d-flex align-items-center" style={{ borderRadius: '20px', fontWeight: 'bold' }} onClick={handleNextStep}>
           Próximo <ArrowRight size={16} className="ml-2" />
@@ -374,11 +374,11 @@ const AdocaoForm = () => {
 
         <div className="d-flex justify-content-between">
           <button type="button" className="btn btn-secondary d-flex align-items-center" style={{ borderRadius: '20px' }} onClick={handlePrevStep} disabled={loading}>
-            <ArrowLeft size={16} className="mr-2" /> Voltar
+            <ArrowLeft size={16} className="me-2" /> Voltar
           </button>
           <button type="submit" className="btn btn-warning text-white d-flex align-items-center" style={{ borderRadius: '20px', fontWeight: 'bold' }} disabled={loading}>
             {loading ? (
-              <span className="spinner-border spinner-border-sm text-white mr-2" role="status" aria-hidden="true"></span>
+              <span className="spinner-border spinner-border-sm text-white me-2" role="status" aria-hidden="true"></span>
             ) : null}
             Enviar Solicitação <FileText size={16} className="ml-2" />
           </button>

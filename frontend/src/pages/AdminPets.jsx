@@ -340,7 +340,7 @@ const AdminPets = () => {
                     </div>
                   ) : (
                     <div className="d-flex align-items-center justify-content-center h-100 pt-3">
-                      <span className="small text-muted mr-2">Prévia:</span>
+                      <span className="small text-muted me-2">Prévia:</span>
                       {photo ? (
                         <img 
                           src={photo} 

@@ -79,14 +79,14 @@ const Login = () => {
 
         {error && (
           <div className="alert alert-danger d-flex align-items-center py-2 px-3 mb-3 rounded" role="alert">
-            <AlertCircle size={18} className="mr-2" />
+            <AlertCircle size={18} className="me-3 flex-shrink-0" />
             <span style={{ fontSize: '0.9rem' }}>{error}</span>
           </div>
         )}
 
         {success && (
           <div className="alert alert-success d-flex align-items-center py-2 px-3 mb-3 rounded" role="alert">
-            <CheckCircle2 size={18} className="mr-2" />
+            <CheckCircle2 size={18} className="me-3 flex-shrink-0" />
             <span style={{ fontSize: '0.9rem' }}>{success}</span>
           </div>
         )}
@@ -95,14 +95,12 @@ const Login = () => {
           <div className="form-group mb-3">
             <label className="font-weight-bold text-secondary" style={{ fontSize: '0.9rem' }}>E-mail corporativo</label>
             <div className="input-group">
-              <div className="input-group-prepend">
-                <span className="input-group-text bg-light border-right-0" style={{ borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' }}>
-                  <Mail size={16} className="text-muted" />
-                </span>
-              </div>
+              <span className="input-group-text bg-light border-end-0" style={{ borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' }}>
+                <Mail size={16} className="text-muted" />
+              </span>
               <input
                 type="email"
-                className="form-control border-left-0"
+                className="form-control border-start-0"
                 style={{ borderTopRightRadius: '8px', borderBottomRightRadius: '8px' }}
                 placeholder="exemplo@cafofo.com"
                 value={email}
@@ -116,14 +114,12 @@ const Login = () => {
           <div className="form-group mb-4">
             <label className="font-weight-bold text-secondary" style={{ fontSize: '0.9rem' }}>Senha</label>
             <div className="input-group">
-              <div className="input-group-prepend">
-                <span className="input-group-text bg-light border-right-0" style={{ borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' }}>
-                  <Lock size={16} className="text-muted" />
-                </span>
-              </div>
+              <span className="input-group-text bg-light border-end-0" style={{ borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' }}>
+                <Lock size={16} className="text-muted" />
+              </span>
               <input
                 type="password"
-                className="form-control border-left-0"
+                className="form-control border-start-0"
                 style={{ borderTopRightRadius: '8px', borderBottomRightRadius: '8px' }}
                 placeholder="Digite sua senha"
                 value={password}
@@ -141,7 +137,7 @@ const Login = () => {
             disabled={loading}
           >
             {loading && (
-              <span className="spinner-border spinner-border-sm text-white mr-2" role="status" aria-hidden="true"></span>
+              <span className="spinner-border spinner-border-sm text-white me-2" role="status" aria-hidden="true"></span>
             )}
             {loading ? 'Autenticando...' : 'Entrar'}
           </button>
