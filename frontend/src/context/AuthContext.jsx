@@ -7,7 +7,7 @@ const AuthContext = createContext();
 // Lista de e-mails autorizados para acesso administrativo via Google Sign-In
 const ALLOWED_ADMIN_EMAILS = [
   'admin@cafofo.com',
-  // Adicione aqui outros e-mails de administradores ou professores para fins de teste
+  // Adicione aqui outros e-mails de administradores
 ];
 
 export const AuthProvider = ({ children }) => {
