@@ -87,7 +87,7 @@ Para acessar a área restrita de administração (`/login`) no sistema, utilize 
 *   **E-mail:** `admin@cafofo.com`
 *   **Senha:** `admin123`
 
-### 🔐 Acesso via Google Sign-In (Novo)
+### 🔐 Acesso via Google Sign-In
 O sistema agora suporta login com contas do Google. Por motivos de segurança, o acesso é controlado:
 1.  **Domínio Corporativo:** Qualquer e-mail terminado em `@cafofo.com` tem acesso liberado automaticamente.
 2.  **Lista de Administradores Autorizados:** E-mails pessoais (como `@gmail.com` ou outros domínios) precisam ser previamente incluídos no código.
